@@ -1,0 +1,5 @@
+Credentials cache: API:3E0AA0F1-C64C-4EF7-83BC-908F98BC7748
+        Principal: ddruart@S19.BE
+
+  Issued                Expires               Principal
+Sep  9 08:27:06 2020  Sep  9 18:27:06 2020  krbtgt/S19.BE@S19.BE

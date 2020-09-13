@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   f_print_alphabet.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddruart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/10 15:37:32 by ddruart           #+#    #+#             */
-/*   Updated: 2020/09/11 09:00:41 by ddruart          ###   ########.fr       */
+/*   Created: 2020/09/11 09:09:49 by ddruart           #+#    #+#             */
+/*   Updated: 2020/09/11 16:55:35 by ddruart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c)
+#include <unistd.h>	
+void 	ft_print_alphabet(void)
 {
-	write(1, &c, 1);
+	write(1, "abcdefghijklmnopqrstuvwxyz\n", 27);
 }

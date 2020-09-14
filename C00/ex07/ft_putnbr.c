@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddruart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 09:20:50 by ddruart           #+#    #+#             */
-/*   Updated: 2020/09/14 14:14:22 by ddruart          ###   ########.fr       */
+/*   Created: 2020/09/14 08:38:25 by ddruart           #+#    #+#             */
+/*   Updated: 2020/09/14 15:05:04 by ddruart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_numbers(void)
+void		ft_putchar(char c)
 {
-	int i;
+	write(1, &c, 1);
+}
 
-	i = 48;
-	while (i < 58)
+void		ft_putnbr(int nb)
+{
+	unsigned int nb1;
+
+	if (nb < 0)
 	{
-		write(1, &i, 1);
-		i++;
+		nb1 = nb * -1;
+		ft_putchar('-');
+		ft_putnbr(nb1);
+	}
+	else if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else if (nb < 9)
+	{
+		ft_putchar('0' + nb);
 	}
 }

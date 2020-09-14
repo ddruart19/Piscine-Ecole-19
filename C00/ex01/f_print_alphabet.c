@@ -6,12 +6,13 @@
 /*   By: ddruart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 09:09:49 by ddruart           #+#    #+#             */
-/*   Updated: 2020/09/11 16:55:35 by ddruart          ###   ########.fr       */
+/*   Updated: 2020/09/14 16:00:00 by ddruart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>	
-void 	ft_print_alphabet(void)
+#include <unistd.h>
+
+void		ft_print_alphabet(void)
 {
-	write(1, "abcdefghijklmnopqrstuvwxyz\n", 27);
+	write(1, "abcdefghijklmnopqrstuvwxyz", 26);
 }

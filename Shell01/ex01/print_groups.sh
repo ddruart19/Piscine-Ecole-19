@@ -1,2 +1,2 @@
 #!/bin/bash
-id $FT_USER | tr ' ' ',' | cat -e
+id -G -n $FT_USER | tr ' ' ',' | tr -d '\n'

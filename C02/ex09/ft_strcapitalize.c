@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddruart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/15 16:38:51 by ddruart           #+#    #+#             */
-/*   Updated: 2020/09/16 08:47:05 by ddruart          ###   ########.fr       */
+/*   Created: 2020/09/17 10:50:28 by ddruart           #+#    #+#             */
+/*   Updated: 2020/09/17 13:18:40 by ddruart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_sort_int_tab(int *tab, int size)
+char		*ft_strcapitalize(char *str)
 {
 	int i;
-	int j;
-	int tampon;
 
 	i = 0;
-	j = 0;
-	while (j < size - 1)
+	while (str[i])
 	{
-		i = 0;
-		while (i < size)
+		if ((str[i - 1] == 32) || (str[i - 1] == 43) || \
+				(str[i - 1] == 45) || (str[i - 1] == '\0'))
 		{
-			if (tab[i] > tab[i + 1])
+			if (str[i] > 96 && str[i] < 123)
 			{
-				tampon = tab[i];
-				tab[i] = tab[i + 1];
-				tab[i + 1] = tampon;
+				str[i] = str[i] - 32;
 			}
-			i++;
 		}
-		j++;
+		i++;
 	}
+	return (0);
 }

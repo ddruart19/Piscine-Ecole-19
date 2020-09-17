@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddruart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/15 16:38:51 by ddruart           #+#    #+#             */
-/*   Updated: 2020/09/16 08:47:05 by ddruart          ###   ########.fr       */
+/*   Created: 2020/09/17 14:43:49 by ddruart           #+#    #+#             */
+/*   Updated: 2020/09/17 15:08:46 by ddruart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_sort_int_tab(int *tab, int size)
+int		ft_strcmp(char *s1, char *s2)
 {
 	int i;
 	int j;
-	int tampon;
 
 	i = 0;
 	j = 0;
-	while (j < size - 1)
+	while (s1[i])
 	{
-		i = 0;
-		while (i < size)
-		{
-			if (tab[i] > tab[i + 1])
-			{
-				tampon = tab[i];
-				tab[i] = tab[i + 1];
-				tab[i + 1] = tampon;
-			}
-			i++;
-		}
+		i++;
+	}
+	while (s2[j])
+	{
 		j++;
+	}
+	if (i > j)
+	{
+		return (1);
+	}
+	if (i < j)
+	{
+		return (-1);
+	}
+	else
+	{
+		return (0);
 	}
 }

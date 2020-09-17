@@ -6,11 +6,13 @@
 /*   By: ddruart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 11:07:05 by ddruart           #+#    #+#             */
-/*   Updated: 2020/09/15 11:50:07 by ddruart          ###   ########.fr       */
+/*   Updated: 2020/09/17 12:42:22 by ddruart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr(int *str)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
 	int i;
 	int caractere;

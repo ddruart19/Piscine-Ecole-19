@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddruart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/15 16:38:51 by ddruart           #+#    #+#             */
-/*   Updated: 2020/09/16 08:47:05 by ddruart          ###   ########.fr       */
+/*   Created: 2020/09/17 09:34:04 by ddruart           #+#    #+#             */
+/*   Updated: 2020/09/17 10:45:18 by ddruart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_sort_int_tab(int *tab, int size)
+char		*ft_strupcase(char *str)
 {
 	int i;
-	int j;
-	int tampon;
 
 	i = 0;
-	j = 0;
-	while (j < size - 1)
+	while (str[i])
 	{
-		i = 0;
-		while (i < size)
+		if (str[i] > 96 && str[i] < 123)
 		{
-			if (tab[i] > tab[i + 1])
-			{
-				tampon = tab[i];
-				tab[i] = tab[i + 1];
-				tab[i + 1] = tampon;
-			}
-			i++;
+			str[i] = str[i] - 32;
 		}
-		j++;
+		i++;
 	}
+	return (0);
 }

@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddruart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/17 14:43:49 by ddruart           #+#    #+#             */
-/*   Updated: 2020/09/26 09:46:41 by ddruart          ###   ########.fr       */
+/*   Created: 2020/09/23 10:58:03 by ddruart           #+#    #+#             */
+/*   Updated: 2020/09/24 11:46:03 by ddruart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
-{
-	int i;
+#include <unistd.h>
 
-	i = 0;
-	while (s1[i] == s2[i])
+void	ft_putchar(char x)
+{
+	write(1, &x, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	unsigned int nnb;
+
+	nnb = nb;
+	if (nb < 0)
 	{
-		if (s1[i] == '\0' && s2[i] == '\0')
-			return (0);
-		i++;
+		write(1, "-", 1);
+		nnb = nb * -1;
 	}
-	return (s1[i] - s2[i]);
+	if (nnb > 9)
+	{
+		ft_putnbr(nnb / 10);
+		ft_putnbr(nnb % 10);
+	}
+	else if (nnb < 9)
+	{
+		ft_putchar(nnb + 48);
+	}
 }

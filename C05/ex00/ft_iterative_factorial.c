@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddruart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/17 14:43:49 by ddruart           #+#    #+#             */
-/*   Updated: 2020/09/26 09:46:41 by ddruart          ###   ########.fr       */
+/*   Created: 2020/09/25 16:35:20 by ddruart           #+#    #+#             */
+/*   Updated: 2020/09/25 17:09:01 by ddruart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+int		ft_iterative_factorial(int nb)
 {
 	int i;
+	int j;
 
 	i = 0;
-	while (s1[i] == s2[i])
+	j = 1;
+	if (nb < 17 && nb > 0)
 	{
-		if (s1[i] == '\0' && s2[i] == '\0')
-			return (0);
-		i++;
+		while (i < nb)
+		{
+			j = j * (i + 1);
+			i++;
+		}
+		return (j);
 	}
-	return (s1[i] - s2[i]);
+	else
+		return (0);
 }

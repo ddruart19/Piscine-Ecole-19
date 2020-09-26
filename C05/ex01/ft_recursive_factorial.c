@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddruart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/17 14:43:49 by ddruart           #+#    #+#             */
-/*   Updated: 2020/09/26 09:46:41 by ddruart          ###   ########.fr       */
+/*   Created: 2020/09/25 17:09:25 by ddruart           #+#    #+#             */
+/*   Updated: 2020/09/25 17:10:13 by ddruart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
-{
-	int i;
+#include <stdio.h>
 
-	i = 0;
-	while (s1[i] == s2[i])
-	{
-		if (s1[i] == '\0' && s2[i] == '\0')
-			return (0);
-		i++;
-	}
-	return (s1[i] - s2[i]);
+int	ft_recursive_factorial(int nb)
+{
+
+}
+
+int main()
+{
+	
 }

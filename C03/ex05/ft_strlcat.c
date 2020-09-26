@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddruart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/17 14:43:49 by ddruart           #+#    #+#             */
-/*   Updated: 2020/09/26 09:46:41 by ddruart          ###   ########.fr       */
+/*   Created: 2020/09/22 09:26:28 by ddruart           #+#    #+#             */
+/*   Updated: 2020/09/25 16:23:38 by ddruart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int i;
+	unsigned int i;
+	unsigned int sizedest;
+	unsigned int sizesrc;
 
 	i = 0;
-	while (s1[i] == s2[i])
+	sizedest = 0;
+	sizesrc = 0;
+	while (dest[sizedest])
 	{
-		if (s1[i] == '\0' && s2[i] == '\0')
-			return (0);
+		sizedest++;
+	}
+	while (src[sizesrc])
+	{
+		sizesrc++;
+	}
+	while (src[i] && sizedest < (size - 1))
+	{
+		dest[sizedest] = src[i];
+		sizedest++;
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	if (size >= sizesrc)
+		return (size + sizesrc - 1);
+	else
+		return (size + sizesrc);
 }
